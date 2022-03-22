@@ -10,13 +10,13 @@ module.exports = {
             date = req.query.date
         }
         else {
-            date = moment().format("YYYY-MM-DD");
+            date =moment().utcOffset("+05:30").format("YYYY-MM-DD");
         }
         const expectedDate = new Date(date);
         expectedDate.setHours(0,0,0,0);
         const firstDate = new Date("2022-03-22");
         firstDate.setHours(0,0,0,0);
-        const timeDiff = expectedDate.getTime()  - firstDate.getTime() ;
+        const timeDiff = expectedDate.getTime() +   - firstDate.getTime() ;
         const daysDiff = timeDiff/(1000 * 60 * 60 * 24);
         const docId = process.env.GOOGLE_SHEET_ID
         const doc = new GoogleSpreadsheet(docId);
