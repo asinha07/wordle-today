@@ -2,7 +2,6 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
 const moment = require('moment')
 const _ = require('lodash')
 const {getRequest} = require("../helper/curl");
-const {getWordOfTheDay, getWordDetails} = require("./wordleService");
 
 module.exports = {
     getWordOfTheDay: async function(req) {

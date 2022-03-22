@@ -1,0 +1,26 @@
+extends index
+
+block content
+    h1 Wordle of the Day
+    h2 #{word}
+
+
+    h1 Let's have a look at what the word means!
+    ul
+    - let count = 1
+    each val  in details
+        h3 Phonetic
+        audio(controls='', autoplay='')
+            -let url = val.phonetics[0].audio
+            source(src= url, type='audio/mpeg')
+
+        each meaning in val.meanings
+            h3 Meanings
+            h4 Part of Speech : #{meaning.partOfSpeech}
+            each definition in meaning.definitions
+                h5 Meaning
+                p #{definition.definition}
+                h5 Example
+                p #{definition.example}
+
+
