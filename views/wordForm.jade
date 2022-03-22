@@ -21,8 +21,10 @@ block content
             h3 Meaning ##{innerCount}
             - innerCount+= 1
             h4 Part of Speech : #{meaning.partOfSpeech}
+            - let count2 = 1
             each definition in meaning.definitions
-                h5 Meaning
+                h5 Definition ##{count2}
+                - count2+=1
                 p #{definition.definition}
                 h5 Example
                 p #{definition.example}
