@@ -7,15 +7,16 @@ block content
 
     h1 Let's have a look at what the word means!
     ul
-    - let count = 1
     each val  in details
         h3 Phonetic
         audio(controls='', autoplay='')
             -let url = val.phonetics[0].audio
             source(src= url, type='audio/mpeg')
 
+        - let count = 1
         each meaning in val.meanings
-            h3 Detail
+            h3 Detail ##{count}
+            - count+= 1
             h4 Part of Speech : #{meaning.partOfSpeech}
             each definition in meaning.definitions
                 h5 Meaning
