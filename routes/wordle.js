@@ -8,7 +8,7 @@ router.get('/', async function (req, res, next) {
 });
 
 router.get('/sheetTitle', async function (req, res, next) {
-    let data = getSpreadSheet();
+    let data = await getSpreadSheet();
     res.send('Wordle route is working ' + data);
 });
 
