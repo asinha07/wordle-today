@@ -13,7 +13,7 @@ block content
         - count+= 1
         h3 Phonetic
         audio(controls='', autoplay='')
-            -let url = val.phonetics[0].audio
+            - let url = ""; if(val.phonetics && val.phonetics[0]) let url = val.phonetics[0].audio
             source(src= url, type='audio/mpeg')
 
         - let innerCount = 1
